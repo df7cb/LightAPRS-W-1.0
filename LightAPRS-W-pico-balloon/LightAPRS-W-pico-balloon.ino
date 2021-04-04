@@ -40,9 +40,9 @@
 //#define DEVMODE // Development mode. Uncomment to enable for debugging.
 
 //******************************  APRS CONFIG **********************************
-char    CallSign[7]="NOCALL"; //DO NOT FORGET TO CHANGE YOUR CALLSIGN
-int8_t  CallNumber=11; //SSID http://www.aprs.org/aprs11/SSIDs.txt
-char    Symbol='O'; // '/O' for balloon, '/>' for car, for more info : http://www.aprs.org/symbols/symbols-new.txt
+char    CallSign[7]="DF7CB"; //DO NOT FORGET TO CHANGE YOUR CALLSIGN
+int8_t  CallNumber=2; //SSID http://www.aprs.org/aprs11/SSIDs.txt
+char    Symbol='>'; // '/O' for balloon, '/>' for car, for more info : http://www.aprs.org/symbols/symbols-new.txt
 bool    alternateSymbolTable = false ; //false = '/' , true = '\'
 
 char    comment[50] = "http://www.lightaprs.com"; // Max 50 char
@@ -52,13 +52,13 @@ char    StatusMessage[50] = "LightAPRS-W by TA2NHP & TA2MUN";
 uint16_t  BeaconWait=50;  //seconds sleep for next beacon (HF or VHF). This is optimized value, do not change this if possible.
 uint16_t  BattWait=60;    //seconds sleep if super capacitors/batteries are below BattMin (important if power source is solar panel) 
 float     BattMin=4.5;    // min Volts to wake up.
-float     DraHighVolt=6.0;// min Volts for radio module (DRA818V) to transmit (TX) 1 Watt, below this transmit 0.5 Watt.
+float     DraHighVolt=4.0;// min Volts for radio module (DRA818V) to transmit (TX) 1 Watt, below this transmit 0.5 Watt.
 float     GpsMinVolt=4.0; //min Volts for GPS to wake up. (important if power source is solar panel) 
-float     WsprBattMin=4.5; //min Volts for HF mradio module to transmit (TX) ~10 mW
+float     WsprBattMin=6.5; //min Volts for HF mradio module to transmit (TX) ~10 mW
 
 //******************************  HF CONFIG *************************************
 
-char hf_call[7] = "NOCALL"; //DO NOT FORGET TO CHANGE YOUR CALLSIGN
+char hf_call[7] = "DF7CB"; //DO NOT FORGET TO CHANGE YOUR CALLSIGN
 
 //#define WSPR_DEFAULT_FREQ       10140200UL //30m band
 #define WSPR_DEFAULT_FREQ       14097200UL //20m band
@@ -152,7 +152,7 @@ boolean HFSent = false;
 int16_t   GpsResetTime=600; // timeout for reset if GPS is not fixed
 
 // GEOFENCE 
-uint32_t GEOFENCE_APRS_frequency      = 144390000; //default frequency before geofencing. This variable will be updated based on GPS location.
+uint32_t GEOFENCE_APRS_frequency      = 144800000; //default frequency before geofencing. This variable will be updated based on GPS location.
 uint32_t GEOFENCE_no_tx               = 0; 
 
 boolean GpsFirstFix=false; //do not change this
